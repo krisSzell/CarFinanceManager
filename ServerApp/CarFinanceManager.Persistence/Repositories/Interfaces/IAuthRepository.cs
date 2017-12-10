@@ -2,7 +2,7 @@
 using CarFinanceManager.Persistence.Models.Accounts;
 using Microsoft.AspNet.Identity;
 
-namespace CarFinanceManager.Persistence.Repositories
+namespace CarFinanceManager.Persistence.Repositories.Interfaces
 {
     public interface IAuthRepository
     {

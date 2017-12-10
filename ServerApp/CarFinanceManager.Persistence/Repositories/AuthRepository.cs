@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using CarFinanceManager.Persistence.Models.Accounts;
+using CarFinanceManager.Persistence.Repositories.Interfaces;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 

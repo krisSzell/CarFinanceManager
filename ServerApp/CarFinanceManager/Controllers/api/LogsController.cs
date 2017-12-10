@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
-using CarFinanceManager.Persistence.Repositories;
+using CarFinanceManager.Persistence.Repositories.Interfaces;
 
-namespace CarWash.Controllers.api
+namespace CarFinanceManager.Controllers.api
 {
     [RoutePrefix("api/logs")]
     public class LogsController : ApiController

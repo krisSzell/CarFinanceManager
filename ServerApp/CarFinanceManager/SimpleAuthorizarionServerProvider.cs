@@ -1,12 +1,12 @@
-﻿using Microsoft.Owin.Security.OAuth;
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using CarFinanceManager.Persistence;
 using CarFinanceManager.Persistence.Models.Accounts;
 using CarFinanceManager.Persistence.Repositories;
+using Microsoft.Owin.Security.OAuth;
 
-namespace CarWash
+namespace CarFinanceManager
 {
     public class SimpleAuthorizarionServerProvider : OAuthAuthorizationServerProvider
     {

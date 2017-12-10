@@ -1,4 +1,5 @@
 ﻿using System;
+using CarFinanceManager.Persistence.Models.Accounts;
 
 namespace CarFinanceManager.Persistence.Models.Core
 {
@@ -9,5 +10,6 @@ namespace CarFinanceManager.Persistence.Models.Core
         public DateTime DateCreated { get; set; }
 
         public ExpenseCategory Category { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

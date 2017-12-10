@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CarFinanceManager.Persistence.Models.Logging;
+using CarFinanceManager.Persistence.Repositories.Interfaces;
 
 namespace CarFinanceManager.Persistence.Repositories
 {

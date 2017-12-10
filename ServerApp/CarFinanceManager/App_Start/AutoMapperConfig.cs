@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace CarWash.App_Start
+namespace CarFinanceManager
 {
     public class AutoMapperConfig
     {

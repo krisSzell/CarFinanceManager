@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace CarWash
+namespace CarFinanceManager
 {
     public class FilterConfig
     {

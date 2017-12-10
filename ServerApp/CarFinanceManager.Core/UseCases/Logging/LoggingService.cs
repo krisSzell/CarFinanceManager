@@ -1,6 +1,7 @@
 ﻿using System;
 using CarFinanceManager.Persistence.Models.Logging;
 using CarFinanceManager.Persistence.Repositories;
+using CarFinanceManager.Persistence.Repositories.Interfaces;
 
 namespace CarFinanceManager.Core.UseCases.Logging
 {

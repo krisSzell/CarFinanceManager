@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json.Serialization;
-using System.Web.Http;
+﻿using System.Web.Http;
+using Newtonsoft.Json.Serialization;
 
-namespace CarWash
+namespace CarFinanceManager
 {
     public static class WebApiConfig
     {

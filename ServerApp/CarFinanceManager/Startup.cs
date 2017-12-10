@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Web.Http;
-using CarWash;
-using CarWash.App_Start;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;

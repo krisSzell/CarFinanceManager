@@ -4,8 +4,9 @@ using Autofac.Integration.WebApi;
 using CarFinanceManager.Core.UseCases.Logging;
 using CarFinanceManager.Persistence;
 using CarFinanceManager.Persistence.Repositories;
+using CarFinanceManager.Persistence.Repositories.Interfaces;
 
-namespace CarWash.App_Start
+namespace CarFinanceManager
 {
     public class AutofacConfig
     {

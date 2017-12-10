@@ -228,18 +228,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Access\ClaimsResolver.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\api\AccountController.cs" />
+    <Compile Include="Controllers\api\ExpenseController.cs" />
     <Compile Include="Controllers\api\LogsController.cs" />
     <Compile Include="SimpleAuthorizarionServerProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CarFinanceContext.mdf" />
+    <Content Include="App_Data\CarFinanceContext_log.ldf">
+      <DependentUpon>CarFinanceContext.mdf</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -271,9 +277,7 @@
       <Name>CarFinanceManager.Persistence</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

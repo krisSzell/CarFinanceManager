@@ -154,6 +154,10 @@
     <Compile Include="Migrations\201712091126574_AddedUserNotifications.Designer.cs">
       <DependentUpon>201712091126574_AddedUserNotifications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712101129559_AddedUserNavigationPropToExpenseDetailsTable.cs" />
+    <Compile Include="Migrations\201712101129559_AddedUserNavigationPropToExpenseDetailsTable.Designer.cs">
+      <DependentUpon>201712101129559_AddedUserNavigationPropToExpenseDetailsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accounts\ApplicationUser.cs" />
     <Compile Include="Models\Accounts\RegisterModel.cs" />
@@ -166,13 +170,17 @@
     <Compile Include="Models\Logging\FullLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AuthRepository.cs" />
-    <Compile Include="Repositories\IAuthRepository.cs" />
-    <Compile Include="Repositories\ILogsRepository.cs" />
+    <Compile Include="Repositories\ExpensesRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IAuthRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IExpensesRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ILogsRepository.cs" />
     <Compile Include="Repositories\LogsRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712091126574_AddedUserNotifications.resx">
       <DependentUpon>201712091126574_AddedUserNotifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712101129559_AddedUserNavigationPropToExpenseDetailsTable.resx">
+      <DependentUpon>201712101129559_AddedUserNavigationPropToExpenseDetailsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

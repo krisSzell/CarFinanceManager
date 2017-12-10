@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNet.Identity;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 using CarFinanceManager.Persistence.Models.Accounts;
-using CarFinanceManager.Persistence.Repositories;
+using CarFinanceManager.Persistence.Repositories.Interfaces;
+using Microsoft.AspNet.Identity;
 
-namespace CarWash.Controllers.api
+namespace CarFinanceManager.Controllers.api
 {
     public class AccountController : ApiController
     {
