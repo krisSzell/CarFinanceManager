@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CarWash.Persistence.Models.Core
+namespace CarFinanceManager.Persistence.Models.Core
 {
     public class ExpenseDetails
     {

@@ -1,6 +1,6 @@
-﻿using CarWash.Persistence.Models.Logging;
-using CarWash.Persistence.Repositories;
-using System;
+﻿using System;
+using CarFinanceManager.Persistence.Models.Logging;
+using CarFinanceManager.Persistence.Repositories;
 
 namespace CarFinanceManager.Core.UseCases.Logging
 {

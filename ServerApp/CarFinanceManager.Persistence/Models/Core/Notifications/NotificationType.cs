@@ -1,4 +1,4 @@
-﻿namespace CarWash.Persistence.Models.Core.Notifications
+﻿namespace CarFinanceManager.Persistence.Models.Core.Notifications
 {
     public enum NotificationType
     {

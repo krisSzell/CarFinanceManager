@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using CarWash.Persistence.Models.Accounts;
+using CarFinanceManager.Persistence.Models.Accounts;
 
-namespace CarWash.Persistence
+namespace CarFinanceManager.Persistence
 {
     public interface IUnitOfWork
     {

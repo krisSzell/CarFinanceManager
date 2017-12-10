@@ -1,7 +1,7 @@
-﻿using CarWash.Persistence.Models.Logging;
-using System.Data.Entity;
+﻿using System.Data.Entity;
+using CarFinanceManager.Persistence.Models.Logging;
 
-namespace CarWash.Persistence
+namespace CarFinanceManager.Persistence
 {
     public class LoggingDbContext : DbContext
     {

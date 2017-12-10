@@ -1,11 +1,11 @@
-﻿using CarWash.Persistence;
-using CarWash.Persistence.Models.Accounts;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using System;
+using CarFinanceManager.Persistence;
+using CarFinanceManager.Persistence.Models.Accounts;
 
 namespace CarWash
 {

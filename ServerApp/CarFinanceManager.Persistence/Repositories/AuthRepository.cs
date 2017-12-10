@@ -1,11 +1,11 @@
-﻿using CarWash.Persistence.Models.Accounts;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using CarFinanceManager.Persistence.Models.Accounts;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace CarWash.Persistence.Repositories
+namespace CarFinanceManager.Persistence.Repositories
 {
     public class AuthRepository : IAuthRepository, IDisposable
     {

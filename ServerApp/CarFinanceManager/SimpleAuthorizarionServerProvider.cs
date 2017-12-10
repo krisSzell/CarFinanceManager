@@ -1,10 +1,10 @@
-﻿using CarWash.Persistence;
-using CarWash.Persistence.Models.Accounts;
-using CarWash.Persistence.Repositories;
-using Microsoft.Owin.Security.OAuth;
+﻿using Microsoft.Owin.Security.OAuth;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using CarFinanceManager.Persistence;
+using CarFinanceManager.Persistence.Models.Accounts;
+using CarFinanceManager.Persistence.Repositories;
 
 namespace CarWash
 {
@@ -20,7 +20,7 @@ namespace CarWash
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            using (AuthRepository _repo = new AuthRepository(new Persistence.ApplicationDbContext()))
+            using (AuthRepository _repo = new AuthRepository(new ApplicationDbContext()))
             {
                 ApplicationUser user = await _repo.FindUser(context.UserName, context.Password);
 

@@ -2,8 +2,8 @@
 using Autofac;
 using Autofac.Integration.WebApi;
 using CarFinanceManager.Core.UseCases.Logging;
-using CarWash.Persistence;
-using CarWash.Persistence.Repositories;
+using CarFinanceManager.Persistence;
+using CarFinanceManager.Persistence.Repositories;
 
 namespace CarWash.App_Start
 {

@@ -1,11 +1,10 @@
-﻿using CarWash.Persistence.Models;
-using CarWash.Persistence.Models.Accounts;
+﻿using System.Data.Entity;
+using CarFinanceManager.Persistence.Models.Accounts;
+using CarFinanceManager.Persistence.Models.Core;
+using CarFinanceManager.Persistence.Models.Core.Notifications;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
-using CarWash.Persistence.Models.Core;
-using CarWash.Persistence.Models.Core.Notifications;
 
-namespace CarWash.Persistence
+namespace CarFinanceManager.Persistence
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

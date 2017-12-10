@@ -1,8 +1,8 @@
-﻿using CarWash.Persistence.Models.Logging;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using CarFinanceManager.Persistence.Models.Logging;
 
-namespace CarWash.Persistence.Repositories
+namespace CarFinanceManager.Persistence.Repositories
 {
     public class LogsRepository : ILogsRepository
     {

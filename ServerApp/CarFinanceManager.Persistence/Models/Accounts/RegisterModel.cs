@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CarWash.Persistence.Models.Accounts
+namespace CarFinanceManager.Persistence.Models.Accounts
 {
     public class RegisterModel
     {

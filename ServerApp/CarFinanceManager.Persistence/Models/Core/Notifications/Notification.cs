@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CarWash.Persistence.Models.Core.Notifications
+namespace CarFinanceManager.Persistence.Models.Core.Notifications
 {
     public class Notification
     {

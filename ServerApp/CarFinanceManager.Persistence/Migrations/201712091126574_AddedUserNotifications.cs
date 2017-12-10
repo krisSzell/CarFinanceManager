@@ -1,8 +1,7 @@
-namespace CarWash.Persistence.Migrations
+using System.Data.Entity.Migrations;
+
+namespace CarFinanceManager.Persistence.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class AddedUserNotifications : DbMigration
     {
         public override void Up()

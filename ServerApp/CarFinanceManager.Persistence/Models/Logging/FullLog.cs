@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CarWash.Persistence.Models.Logging
+namespace CarFinanceManager.Persistence.Models.Logging
 {
     public class FullLog
     {

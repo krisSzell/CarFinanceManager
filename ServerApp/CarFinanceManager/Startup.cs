@@ -1,13 +1,15 @@
-﻿using CarWash.App_Start;
+﻿using System;
+using System.Web.Http;
+using CarWash;
+using CarWash.App_Start;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using System;
-using System.Web.Http;
+using Startup = CarFinanceManager.Startup;
 
-[assembly: OwinStartupAttribute(typeof(CarWash.Startup))]
-namespace CarWash
+[assembly: OwinStartup(typeof(Startup))]
+namespace CarFinanceManager
 {
     public partial class Startup
     {

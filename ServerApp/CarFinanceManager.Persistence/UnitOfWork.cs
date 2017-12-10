@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using CarWash.Persistence.Models.Accounts;
+using CarFinanceManager.Persistence.Models.Accounts;
 
-namespace CarWash.Persistence
+namespace CarFinanceManager.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {

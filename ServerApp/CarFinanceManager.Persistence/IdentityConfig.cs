@@ -1,14 +1,14 @@
-﻿using CarWash.Persistence.Models.Accounts;
+﻿using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using CarFinanceManager.Persistence.Models.Accounts;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using System;
-using System.Security.Claims;
-using System.Threading.Tasks;
 
-namespace CarWash.Persistence
+namespace CarFinanceManager.Persistence
 {
     public class EmailService : IIdentityMessageService
     {
