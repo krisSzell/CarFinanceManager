@@ -7,8 +7,8 @@
     <ProjectGuid>{775B9E12-CBC2-4FBD-A5AC-1D305DFB9F31}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarWash.Core</RootNamespace>
-    <AssemblyName>CarWash.Core</AssemblyName>
+    <RootNamespace>CarFinanceManager.Core</RootNamespace>
+    <AssemblyName>CarFinanceManager.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -84,9 +84,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarWash.Persistence\CarWash.Persistence.csproj">
+    <ProjectReference Include="..\CarFinanceManager.Persistence\CarFinanceManager.Persistence.csproj">
       <Project>{2fef04aa-f6ad-4b22-a818-c3327fa3e08c}</Project>
-      <Name>CarWash.Persistence</Name>
+      <Name>CarFinanceManager.Persistence</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -10,8 +10,8 @@
     <ProjectGuid>{6A5355B0-10A0-440C-917B-5E4D5C7A5F99}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarWash.Tests</RootNamespace>
-    <AssemblyName>CarWash.Tests</AssemblyName>
+    <RootNamespace>CarFinanceManager.Tests</RootNamespace>
+    <AssemblyName>CarFinanceManager.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -127,17 +127,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarWash.Core\CarWash.Core.csproj">
+    <ProjectReference Include="..\CarFinanceManager.Core\CarFinanceManager.Core.csproj">
       <Project>{775B9E12-CBC2-4FBD-A5AC-1D305DFB9F31}</Project>
-      <Name>CarWash.Core</Name>
+      <Name>CarFinanceManager.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CarWash.Persistence\CarWash.Persistence.csproj">
+    <ProjectReference Include="..\CarFinanceManager.Persistence\CarFinanceManager.Persistence.csproj">
       <Project>{2FEF04AA-F6AD-4B22-A818-C3327FA3E08C}</Project>
-      <Name>CarWash.Persistence</Name>
+      <Name>CarFinanceManager.Persistence</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CarWash\CarWash.UI.csproj">
+    <ProjectReference Include="..\CarFinanceManager\CarFinanceManager.UI.csproj">
       <Project>{F655897E-19B9-4A20-A4D4-8642B8FD141C}</Project>
-      <Name>CarWash.UI</Name>
+      <Name>CarFinanceManager.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

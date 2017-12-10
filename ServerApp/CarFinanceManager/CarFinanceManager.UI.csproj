@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarWash</RootNamespace>
-    <AssemblyName>CarWash</AssemblyName>
+    <RootNamespace>CarFinanceManager</RootNamespace>
+    <AssemblyName>CarFinanceManager</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -261,13 +261,13 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarWash.Core\CarWash.Core.csproj">
+    <ProjectReference Include="..\CarFinanceManager.Core\CarFinanceManager.Core.csproj">
       <Project>{775b9e12-cbc2-4fbd-a5ac-1d305dfb9f31}</Project>
-      <Name>CarWash.Core</Name>
+      <Name>CarFinanceManager.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CarWash.Persistence\CarWash.Persistence.csproj">
+    <ProjectReference Include="..\CarFinanceManager.Persistence\CarFinanceManager.Persistence.csproj">
       <Project>{2fef04aa-f6ad-4b22-a818-c3327fa3e08c}</Project>
-      <Name>CarWash.Persistence</Name>
+      <Name>CarFinanceManager.Persistence</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

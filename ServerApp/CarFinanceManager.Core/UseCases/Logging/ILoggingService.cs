@@ -1,4 +1,4 @@
-﻿namespace CarWash.Core.UseCases.Logging
+﻿namespace CarFinanceManager.Core.UseCases.Logging
 {
     public interface ILoggingService
     {

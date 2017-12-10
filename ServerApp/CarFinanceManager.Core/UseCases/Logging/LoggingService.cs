@@ -2,7 +2,7 @@
 using CarWash.Persistence.Repositories;
 using System;
 
-namespace CarWash.Core.UseCases.Logging
+namespace CarFinanceManager.Core.UseCases.Logging
 {
     public class LoggingService : ILoggingService
     {

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Autofac;
 using Autofac.Integration.WebApi;
-using CarWash.Core.UseCases.Logging;
+using CarFinanceManager.Core.UseCases.Logging;
 using CarWash.Persistence;
 using CarWash.Persistence.Repositories;
 

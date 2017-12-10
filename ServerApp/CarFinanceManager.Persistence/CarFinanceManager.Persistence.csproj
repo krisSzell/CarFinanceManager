@@ -7,8 +7,8 @@
     <ProjectGuid>{2FEF04AA-F6AD-4B22-A818-C3327FA3E08C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarWash.Persistence</RootNamespace>
-    <AssemblyName>CarWash.Persistence</AssemblyName>
+    <RootNamespace>CarFinanceManager.Persistence</RootNamespace>
+    <AssemblyName>CarFinanceManager.Persistence</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
