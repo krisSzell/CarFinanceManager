@@ -17,6 +17,7 @@ using CarFinanceManager.Persistence.Models.Core;
 
 namespace CarFinanceManager.Controllers.api
 {
+    [RoutePrefix("api/expenses")]
     public class ExpenseController : ApiController
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -28,6 +29,8 @@ namespace CarFinanceManager.Controllers.api
             _claims = claims;
         }
 
+        [Route("current")]
+        [HttpGet]
         public IHttpActionResult GetExpensesForCurrentUser()
         {
             var userName = _claims
@@ -38,6 +41,8 @@ namespace CarFinanceManager.Controllers.api
             return Ok(currentUserExpenses);
         }
 
+        [Route("new")]
+        [HttpPost]
         public IHttpActionResult AddExpense([FromBody] ExpenseDto expense)
         {
             var user = _claims.GetUserFromRequestClaim(User.Identity as ClaimsIdentity, _unitOfWork.Users);
