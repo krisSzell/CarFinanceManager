@@ -10,6 +10,6 @@ namespace CarFinanceManager.Persistence.Models.Core
         public DateTime DateCreated { get; set; }
 
         public ExpenseCategory Category { get; set; }
-        public ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

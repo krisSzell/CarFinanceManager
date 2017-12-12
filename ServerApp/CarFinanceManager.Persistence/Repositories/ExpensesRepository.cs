@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Security.Claims;
+using CarFinanceManager.Persistence.Dtos.Core;
 using CarFinanceManager.Persistence.Models.Accounts;
 using CarFinanceManager.Persistence.Models.Core;
 using CarFinanceManager.Persistence.Repositories.Interfaces;
@@ -19,9 +22,25 @@ namespace CarFinanceManager.Persistence.Repositories
             _userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_context));
         }
 
-        public IEnumerable<ExpenseDetails> GetByUserName(string userName)
+        public IEnumerable<ExpenseDto> GetByUserName(string userName)
         {
-            return _context.Expenses.Where(e => e.User.UserName == userName).ToList();
+            return _context.Expenses
+                .Where(e => e.User.UserName == userName)
+                .Include(e => e.Category)
+                .Select(e => new ExpenseDto
+                    {
+                        Id = e.ExpenseDetailsID,
+                        Category = e.Category.Name,
+                        Cost = e.Cost,
+                        DateCreated = e.DateCreated
+                    })
+                .ToList();
+        }
+
+        public ExpenseCategory GetCategoryByName(string categoryName)
+        {
+            return _context.ExpenseCategories
+                .SingleOrDefault(c => c.Name == categoryName);
         }
 
         public void Add(ExpenseDetails expense)

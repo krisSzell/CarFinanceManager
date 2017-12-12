@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CarFinanceManager.Persistence.Models.Accounts;
-using CarFinanceManager.Persistence.Models.Core;
 using CarFinanceManager.Persistence.Repositories;
+using CarFinanceManager.Persistence.Repositories.Interfaces;
 
 namespace CarFinanceManager.Persistence
 {
@@ -18,7 +18,7 @@ namespace CarFinanceManager.Persistence
         }
 
         public IEnumerable<ApplicationUser> Users { get; set; }
-        public ExpensesRepository Expenses { get; set; }
+        public IExpensesRepository Expenses { get; set; }
 
         public void PersistChanges()
         {

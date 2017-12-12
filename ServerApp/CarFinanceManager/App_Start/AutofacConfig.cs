@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Autofac;
 using Autofac.Integration.WebApi;
+using CarFinanceManager.Access;
 using CarFinanceManager.Core.UseCases.Logging;
 using CarFinanceManager.Persistence;
 using CarFinanceManager.Persistence.Repositories;
@@ -23,6 +24,7 @@ namespace CarFinanceManager
         private static void registerInstances(ContainerBuilder builder)
         {
             builder.RegisterInstance<IUnitOfWork>(new UnitOfWork(new ApplicationDbContext()));
+            builder.RegisterInstance<IClaimsResolver>(new ClaimsResolver());
             builder.RegisterInstance<ILogsRepository>(new LogsRepository(new LoggingDbContext()));
             builder.RegisterInstance<ILoggingService>(new LoggingService(new LogsRepository(new LoggingDbContext())));
             builder.RegisterInstance<IAuthRepository>(new AuthRepository(new ApplicationDbContext()));

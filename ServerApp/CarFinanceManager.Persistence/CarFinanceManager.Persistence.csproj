@@ -49,6 +49,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -131,32 +134,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="IdentityConfig.cs" />
+    <Compile Include="ApplicationSignInManager.cs" />
+    <Compile Include="ApplicationUserManager.cs" />
+    <Compile Include="Converters\ExpenseDtoToDomainConverter.cs" />
+    <Compile Include="Dtos\Core\ExpenseDto.cs" />
+    <Compile Include="EmailService.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="LoggingDbContext.cs" />
-    <Compile Include="Migrations\201712091030325_InitDatabase.cs" />
-    <Compile Include="Migrations\201712091030325_InitDatabase.Designer.cs">
-      <DependentUpon>201712091030325_InitDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\InitDatabase.cs" />
+    <Compile Include="Migrations\InitDatabase.Designer.cs">
+      <DependentUpon>InitDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712091050177_AddedAssociationBetweenUsersAndVehiclesOwned.cs" />
-    <Compile Include="Migrations\201712091050177_AddedAssociationBetweenUsersAndVehiclesOwned.Designer.cs">
-      <DependentUpon>201712091050177_AddedAssociationBetweenUsersAndVehiclesOwned.cs</DependentUpon>
+    <Compile Include="Migrations\AddedAssociationBetweenUsersAndVehiclesOwned.cs" />
+    <Compile Include="Migrations\AddedAssociationBetweenUsersAndVehiclesOwned.Designer.cs">
+      <DependentUpon>AddedAssociationBetweenUsersAndVehiclesOwned.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712091056082_AddedExpensesTables.cs" />
-    <Compile Include="Migrations\201712091056082_AddedExpensesTables.Designer.cs">
-      <DependentUpon>201712091056082_AddedExpensesTables.cs</DependentUpon>
+    <Compile Include="Migrations\AddedExpensesTables.cs" />
+    <Compile Include="Migrations\AddedExpensesTables.Designer.cs">
+      <DependentUpon>AddedExpensesTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712091124007_AddedNotificationsModel.cs" />
-    <Compile Include="Migrations\201712091124007_AddedNotificationsModel.Designer.cs">
-      <DependentUpon>201712091124007_AddedNotificationsModel.cs</DependentUpon>
+    <Compile Include="Migrations\AddedNotificationsModel.cs" />
+    <Compile Include="Migrations\AddedNotificationsModel.Designer.cs">
+      <DependentUpon>AddedNotificationsModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712091126574_AddedUserNotifications.cs" />
-    <Compile Include="Migrations\201712091126574_AddedUserNotifications.Designer.cs">
-      <DependentUpon>201712091126574_AddedUserNotifications.cs</DependentUpon>
+    <Compile Include="Migrations\AddedUserNotifications.cs" />
+    <Compile Include="Migrations\AddedUserNotifications.Designer.cs">
+      <DependentUpon>AddedUserNotifications.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712101129559_AddedUserNavigationPropToExpenseDetailsTable.cs" />
-    <Compile Include="Migrations\201712101129559_AddedUserNavigationPropToExpenseDetailsTable.Designer.cs">
-      <DependentUpon>201712101129559_AddedUserNavigationPropToExpenseDetailsTable.cs</DependentUpon>
+    <Compile Include="Migrations\AddedUserNavigationPropToExpenseDetailsTable.cs" />
+    <Compile Include="Migrations\AddedUserNavigationPropToExpenseDetailsTable.Designer.cs">
+      <DependentUpon>AddedUserNavigationPropToExpenseDetailsTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accounts\ApplicationUser.cs" />
@@ -175,6 +182,7 @@
     <Compile Include="Repositories\Interfaces\IExpensesRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILogsRepository.cs" />
     <Compile Include="Repositories\LogsRepository.cs" />
+    <Compile Include="SmsService.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,27 +191,25 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Dtos\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712091030325_InitDatabase.resx">
-      <DependentUpon>201712091030325_InitDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\InitDatabase.resx">
+      <DependentUpon>InitDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712091050177_AddedAssociationBetweenUsersAndVehiclesOwned.resx">
-      <DependentUpon>201712091050177_AddedAssociationBetweenUsersAndVehiclesOwned.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\AddedAssociationBetweenUsersAndVehiclesOwned.resx">
+      <DependentUpon>AddedAssociationBetweenUsersAndVehiclesOwned.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712091056082_AddedExpensesTables.resx">
-      <DependentUpon>201712091056082_AddedExpensesTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\AddedExpensesTables.resx">
+      <DependentUpon>AddedExpensesTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712091124007_AddedNotificationsModel.resx">
-      <DependentUpon>201712091124007_AddedNotificationsModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\AddedNotificationsModel.resx">
+      <DependentUpon>AddedNotificationsModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712091126574_AddedUserNotifications.resx">
-      <DependentUpon>201712091126574_AddedUserNotifications.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\AddedUserNotifications.resx">
+      <DependentUpon>AddedUserNotifications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712101129559_AddedUserNavigationPropToExpenseDetailsTable.resx">
-      <DependentUpon>201712101129559_AddedUserNavigationPropToExpenseDetailsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\AddedUserNavigationPropToExpenseDetailsTable.resx">
+      <DependentUpon>AddedUserNavigationPropToExpenseDetailsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

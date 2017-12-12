@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using CarFinanceManager.Persistence.Converters;
+using CarFinanceManager.Persistence.Dtos.Core;
+using CarFinanceManager.Persistence.Models.Core;
 
 namespace CarFinanceManager
 {
@@ -8,6 +11,7 @@ namespace CarFinanceManager
         {
             Mapper.Initialize(config =>
             {
+                config.CreateMap<ExpenseDto, ExpenseDetails>().ConvertUsing<ExpenseDtoToDomainConverter>();
             });
         }
     }
