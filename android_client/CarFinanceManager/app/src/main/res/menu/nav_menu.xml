@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/vehicles"
+        android:title="Pojazdy">
+    </item>
+
+
+    <item
+            android:id="@+id/expences"
+            android:title="Wydatki">
+    </item>
+
+    <item
+            android:id="@+id/calendarmenu"
+            android:title="Terminarz">
+    </item>
+
+    <item
+            android:id="@+id/logout"
+            android:title="Wyloguj">
+    </item>
+
+</menu>
