@@ -1,11 +1,13 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using CarFinanceManager.Persistence.Models.Accounts;
 using CarFinanceManager.Persistence.Repositories.Interfaces;
 using Microsoft.AspNet.Identity;
 
 namespace CarFinanceManager.Controllers.api
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AccountController : ApiController
     {
         private readonly IAuthRepository _authRepo;

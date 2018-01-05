@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 using Newtonsoft.Json.Serialization;
 
 namespace CarFinanceManager
@@ -10,6 +11,9 @@ namespace CarFinanceManager
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
 
             config.MapHttpAttributeRoutes();
 

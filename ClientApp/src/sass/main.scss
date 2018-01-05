@@ -1,0 +1,42 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '../css/bootstrap-flatly.css';
+
+.bg-fill-all {
+    height: 100vh;
+}
+
+.welcome-img {
+    height: 250px;
+    width: 250px;
+}
+
+.expenses-list {
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.expense-add {
+    transition: all .5s;
+}
+.expense-add:hover {
+    color: rgb(103, 248, 204);
+    transition: all .5s;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: rgb(77, 97, 117);
+}

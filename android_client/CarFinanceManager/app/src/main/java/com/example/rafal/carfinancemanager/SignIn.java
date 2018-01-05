@@ -25,13 +25,14 @@ import java.util.Map;
 
 public class SignIn extends Activity {
 
-    Button button = (Button) findViewById(R.id.btn_signup);
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
         View textView = (TextView) findViewById(R.id.link_login);
+        button = (Button) findViewById(R.id.btn_signup);
 
         textView.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -42,7 +43,7 @@ public class SignIn extends Activity {
             }
         });
 
-        button.setOnClickListener(new View.OnClickListener()
+       button.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
@@ -56,22 +57,14 @@ public class SignIn extends Activity {
                         .addHeader("content-type", "application/json")
                         .addHeader("cache-control", "no-cache")
                         .build();
-
                 try {
                     Response response = client.newCall(request).execute();
                 }
                 catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
         });
-
-
-
-
-
-
     }
 }
 
