@@ -4,41 +4,58 @@ import Header from './header.jsx';
 import Home from '../home/home.jsx';
 import Register from '../users/register.jsx';
 import LogIn from '../users/log-in.jsx';
+import Garage from '../garage/garage.jsx';
 import ExpensesService from '../../rest/expenses.service.jsx';
+import CategoriesService from '../../rest/categories.service.jsx';
+import GarageService from '../../rest/garage.service.jsx';
 
 import { expenses, categories } from '../../mockdata/data';
 
+const garageService = new GarageService(localStorage.getItem('token'));
 const expensesService = new ExpensesService(localStorage.getItem('token'));
 
 class App extends React.PureComponent {
     state = {
         user: localStorage.getItem('currentUser'),
         isLogged: localStorage.getItem('token') ? true : false,
-        expenses: []
+        expenses: [],
+        vehicles: []
     }
 
     componentDidMount() {
-        expensesService.getAll()
-            .then(res => {
-                console.log([...res.data]);
-                this.setState({ expenses: [...res.data] });
-            });
-        this.setState({ categories });
+        CategoriesService.getAll()
+            .then(res => this.setState({ categories: res.data }));
+
+        if (this.state.isLogged)
+            Promise.all([expensesService.getAll(), garageService.getAll()])
+                .then(([expenses, vehicles]) => 
+                    this.setState({ 
+                        expenses: expensesService.sortExpensesLatestToOldest(expenses.data), 
+                        vehicles: vehicles.data
+                    }));
     }
 
     onLoginSuccess = () => {
-        expensesService.getAll()
-        .then(res => {
-            console.log([...res.data]);
-            this.setState({ expenses: [...res.data], user: localStorage.getItem('currentUser'), isLogged: true });
-        });
+        expensesService.setToken(localStorage.getItem('token'));
+        garageService.setToken(localStorage.getItem('token'));
+        Promise.all([expensesService.getAll(), garageService.getAll()])
+            .then(([expenses, vehicles]) => {
+                this.setState({ 
+                    expenses: expensesService.sortExpensesLatestToOldest(res.data),
+                    vehicles: vehicles.data, 
+                    user: localStorage.getItem('currentUser'), isLogged: true });
+            });
     }
 
     onLogout = () => {
         localStorage.removeItem('currentUser');
         localStorage.removeItem('token');
         expensesService.removeToken();
-        this.setState({ user: null })
+        this.setState({ user: null, vehicles: [], expenses: [] })
+    }
+
+    onExpenseAdd = expense => {
+        this.setState(prevState => ({ expenses: prevState.expenses.concat(expense) }));
     }
 
     render() {
@@ -46,9 +63,14 @@ class App extends React.PureComponent {
             <BrowserRouter>
                 <div 
                     className="bg-primary bg-fill-all">
-                    <Header
-                        user={this.state.user}
-                        onLogout={this.onLogout} />
+                    <Route 
+                        path='/'
+                        render={
+                            routeProps => <Header 
+                                {...routeProps} 
+                                user={this.state.user} 
+                                onLogout={this.onLogout} />
+                        } />
                     <div className="container">
                         <Route path='/register' component={Register} />
                         <Route 
@@ -57,9 +79,21 @@ class App extends React.PureComponent {
                                 routeProps => <LogIn {...routeProps} onLoginSuccess={this.onLoginSuccess} />
                             } />
                         <Route 
+                            path='/garage'
+                            render={
+                                routeProps => <Garage 
+                                                {...routeProps} 
+                                                {...this.state}
+                                                garageService={garageService} />
+                            } />
+                        <Route 
                             exact path='/' 
                             render={routeProps => 
-                                    <Home {...routeProps} {...this.state} expensesService={expensesService} />}
+                                    <Home 
+                                        {...routeProps} 
+                                        {...this.state} 
+                                        expensesService={expensesService}
+                                        onExpenseAdd={this.onExpenseAdd} />}
                         />
                     </div>
                 </div>

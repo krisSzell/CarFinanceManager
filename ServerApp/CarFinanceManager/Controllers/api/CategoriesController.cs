@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using AutoMapper;
 using CarFinanceManager.Persistence;
 using CarFinanceManager.Persistence.Models.Core;
 

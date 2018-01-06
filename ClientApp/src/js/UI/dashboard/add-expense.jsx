@@ -14,7 +14,7 @@ export default class AddExpense extends React.PureComponent {
             category: this.category.value,
             dateCreated: moment().format(apiDateFormat)
         })
-        .then(() => console.log('successfully added an expense'));
+        .then(res => this.addExpense(res.data));
 
         var modal = $('#addExpense');
         modal.modal('hide');
@@ -24,6 +24,10 @@ export default class AddExpense extends React.PureComponent {
     resetForm = () => {
         this.cost.value = null;
         this.category.value = null;
+    }
+
+    addExpense = expense => {
+        this.props.onExpenseAdd(expense);
     }
 
     render() {

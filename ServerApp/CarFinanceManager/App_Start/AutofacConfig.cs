@@ -23,7 +23,7 @@ namespace CarFinanceManager
 
         private static void registerInstances(ContainerBuilder builder)
         {
-            builder.RegisterInstance<IUnitOfWork>(new UnitOfWork(new ApplicationDbContext()));
+            builder.RegisterInstance<IUnitOfWork>(new UnitOfWork());
             builder.RegisterInstance<IClaimsResolver>(new ClaimsResolver());
             builder.RegisterInstance<ILogsRepository>(new LogsRepository(new LoggingDbContext()));
             builder.RegisterInstance<ILoggingService>(new LoggingService(new LogsRepository(new LoggingDbContext())));

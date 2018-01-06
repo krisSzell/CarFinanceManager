@@ -10,5 +10,13 @@ export const Categories = [
     {
         name: "Repairs",
         fa: "fa-wrench"
+    },
+    {
+        name: "Insurance",
+        fa: "fa-shield-alt"
+    },
+    {
+        name: "Technical Inspection",
+        fa: "fa-stethoscope"
     }
 ]

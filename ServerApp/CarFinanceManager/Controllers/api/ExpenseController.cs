@@ -17,6 +17,7 @@ using CarFinanceManager.Persistence.Models.Core;
 
 namespace CarFinanceManager.Controllers.api
 {
+    [Authorize]
     [RoutePrefix("api/expenses")]
     public class ExpenseController : ApiController
     {
@@ -59,7 +60,8 @@ namespace CarFinanceManager.Controllers.api
                 return BadRequest("Model is invalid");
 
             _unitOfWork.Expenses.Add(domainExpense);
-            _unitOfWork.PersistChanges();
+
+            expense.Id = domainExpense.ExpenseDetailsID;
 
             return Ok(expense);
         }

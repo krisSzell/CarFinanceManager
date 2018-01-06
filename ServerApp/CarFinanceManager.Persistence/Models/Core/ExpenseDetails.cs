@@ -9,6 +9,7 @@ namespace CarFinanceManager.Persistence.Models.Core
         public decimal Cost { get; set; }
         public DateTime DateCreated { get; set; }
 
+        public Vehicle Vehicle { get; set; }
         public ExpenseCategory Category { get; set; }
         public virtual ApplicationUser User { get; set; }
     }

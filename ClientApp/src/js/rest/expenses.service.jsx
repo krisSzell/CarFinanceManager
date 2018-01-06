@@ -31,4 +31,15 @@ export default class ExpensesService {
                 "Authorization": `Bearer ${this.token}`
             }
         });
+
+    
+    sortExpensesLatestToOldest = expenses => {
+        return [].concat(expenses).sort((a, b) => { 
+            if (a.dateCreated > b.dateCreated) 
+                return -1;
+            if (a.dateCreated < b.dateCreated)
+                return 1;
+            return 0;
+        });
+    }
 }

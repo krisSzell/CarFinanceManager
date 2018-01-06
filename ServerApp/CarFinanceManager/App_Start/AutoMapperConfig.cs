@@ -11,7 +11,10 @@ namespace CarFinanceManager
         {
             Mapper.Initialize(config =>
             {
-                config.CreateMap<ExpenseDto, ExpenseDetails>().ConvertUsing<ExpenseDtoToDomainConverter>();
+                config.CreateMap<ExpenseDto, ExpenseDetails>()
+                    .ConvertUsing<ExpenseDtoToDomainConverter>();
+                config.CreateMap<VehicleDto, Vehicle>()
+                    .ConvertUsing<VehicleDtoToDomainConverter>();
             });
         }
     }

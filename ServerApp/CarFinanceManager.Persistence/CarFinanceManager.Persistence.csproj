@@ -137,10 +137,19 @@
     <Compile Include="ApplicationSignInManager.cs" />
     <Compile Include="ApplicationUserManager.cs" />
     <Compile Include="Converters\ExpenseDtoToDomainConverter.cs" />
+    <Compile Include="Converters\VehicleDtoToDomainConverter.cs" />
     <Compile Include="Dtos\Core\ExpenseDto.cs" />
     <Compile Include="EmailService.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="LoggingDbContext.cs" />
+    <Compile Include="Migrations\201801061142552_AddedNavPropToVehicleInExpenseDetail.cs" />
+    <Compile Include="Migrations\201801061142552_AddedNavPropToVehicleInExpenseDetail.Designer.cs">
+      <DependentUpon>201801061142552_AddedNavPropToVehicleInExpenseDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801061144413_AddedUserNavPropToVehicleModel.cs" />
+    <Compile Include="Migrations\201801061144413_AddedUserNavPropToVehicleModel.Designer.cs">
+      <DependentUpon>201801061144413_AddedUserNavPropToVehicleModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\InitDatabase.cs" />
     <Compile Include="Migrations\InitDatabase.Designer.cs">
       <DependentUpon>InitDatabase.cs</DependentUpon>
@@ -181,7 +190,10 @@
     <Compile Include="Repositories\Interfaces\IAuthRepository.cs" />
     <Compile Include="Repositories\Interfaces\IExpensesRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILogsRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IVehiclesRepository.cs" />
+    <Compile Include="Dtos\Core\VehicleDto.cs" />
     <Compile Include="Repositories\LogsRepository.cs" />
+    <Compile Include="Repositories\VehiclesRepository.cs" />
     <Compile Include="SmsService.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
@@ -193,6 +205,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801061142552_AddedNavPropToVehicleInExpenseDetail.resx">
+      <DependentUpon>201801061142552_AddedNavPropToVehicleInExpenseDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801061144413_AddedUserNavPropToVehicleModel.resx">
+      <DependentUpon>201801061144413_AddedUserNavPropToVehicleModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\InitDatabase.resx">
       <DependentUpon>InitDatabase.cs</DependentUpon>
     </EmbeddedResource>

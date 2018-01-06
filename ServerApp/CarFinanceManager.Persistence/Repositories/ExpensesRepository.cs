@@ -14,12 +14,10 @@ namespace CarFinanceManager.Persistence.Repositories
     public class ExpensesRepository : IExpensesRepository
     {
         private readonly ApplicationDbContext _context;
-        private UserManager<ApplicationUser> _userManager;
 
         public ExpensesRepository(ApplicationDbContext context)
         {
             _context = context;
-            _userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_context));
         }
 
         public IEnumerable<ExpenseDto> GetByUserName(string userName)
@@ -46,11 +44,13 @@ namespace CarFinanceManager.Persistence.Repositories
         public void Add(ExpenseDetails expense)
         {
             _context.Expenses.Add(expense);
+            _context.SaveChanges();
         }
 
         public void AddCategory(ExpenseCategory category)
         {
             _context.ExpenseCategories.Add(category);
+            _context.SaveChanges();
         }
     }
 }

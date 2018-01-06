@@ -10,6 +10,6 @@ namespace CarFinanceManager.Persistence
     {
         IEnumerable<ApplicationUser> Users { get; set; }
         IExpensesRepository Expenses { get; set; }
-        void PersistChanges();
+        IVehiclesRepository Vehicles { get; set; }
     }
 }
