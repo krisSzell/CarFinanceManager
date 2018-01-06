@@ -25,12 +25,14 @@ namespace CarFinanceManager.Persistence.Repositories
             return _context.Expenses
                 .Where(e => e.User.UserName == userName)
                 .Include(e => e.Category)
+                .Include(e => e.Vehicle)
                 .Select(e => new ExpenseDto
                     {
                         Id = e.ExpenseDetailsID,
                         Category = e.Category.Name,
                         Cost = e.Cost,
-                        DateCreated = e.DateCreated
+                        DateCreated = e.DateCreated,
+                        VehicleId = e.Vehicle.VehicleId
                     })
                 .ToList();
         }

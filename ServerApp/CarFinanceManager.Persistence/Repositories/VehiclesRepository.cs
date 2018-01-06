@@ -34,6 +34,11 @@ namespace CarFinanceManager.Persistence.Repositories
                 .ToList();
         }
 
+        public Vehicle GetSingleById(int id)
+        {
+            return _context.Vehicles.Find(id);
+        }
+
         public void Add(Vehicle vehicle)
         {
             if (_context.Vehicles.Find(vehicle.VehicleId) == null)

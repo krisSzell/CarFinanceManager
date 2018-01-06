@@ -11,6 +11,7 @@ namespace CarFinanceManager.Persistence.Repositories.Interfaces
     public interface IVehiclesRepository
     {
         IEnumerable<VehicleDto> GetAllByUsername(string username);
+        Vehicle GetSingleById(int id);
         void Add(Vehicle vehicle);
         void Remove(int id);
     }

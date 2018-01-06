@@ -23,16 +23,25 @@ class App extends React.PureComponent {
     }
 
     componentDidMount() {
-        CategoriesService.getAll()
-            .then(res => this.setState({ categories: res.data }));
+        var categories;
+        var expenses;
+        var vehicles;
 
-        if (this.state.isLogged)
-            Promise.all([expensesService.getAll(), garageService.getAll()])
-                .then(([expenses, vehicles]) => 
-                    this.setState({ 
-                        expenses: expensesService.sortExpensesLatestToOldest(expenses.data), 
-                        vehicles: vehicles.data
-                    }));
+        CategoriesService.getAll()
+            .then(c => {
+                categories = c.data;
+                if (this.state.isLogged)
+                    garageService.getAll()
+                        .then(v => {
+                            vehicles = v.data;
+                            expensesService.getAll()
+                                .then(e => {
+                                    expenses = expensesService.sortExpensesLatestToOldest(e.data);
+                                    this.setState({ vehicles, expenses });
+                                })
+                        })
+                this.setState({ categories });
+            });
     }
 
     onLoginSuccess = () => {
@@ -55,7 +64,7 @@ class App extends React.PureComponent {
     }
 
     onExpenseAdd = expense => {
-        this.setState(prevState => ({ expenses: prevState.expenses.concat(expense) }));
+        this.setState(prevState => ({ expenses: [].concat(expense).concat(prevState.expenses) }));
     }
 
     render() {

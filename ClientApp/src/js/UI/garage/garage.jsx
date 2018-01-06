@@ -1,14 +1,15 @@
 import React from 'react';
+import VehicleCard from './vehicle-card.jsx';
 
 export default class Garage extends React.PureComponent {
     render() {
         return(
             <div>
-                <h2 className="text-success">Your vehicles:</h2>
-                <ul>
+                <h2 className="text-success mt-3">Your vehicles:</h2>
+                <div>
                     {this.props.vehicles.map(vehicle => 
-                        (<li key={vehicle.id}>{vehicle.model}</li>))}
-                </ul>
+                        (<VehicleCard key={vehicle.id} {...vehicle} expenses={this.props.expenses} />))}
+                </div>
             </div>
         );
     }

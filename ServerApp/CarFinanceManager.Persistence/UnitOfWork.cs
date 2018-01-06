@@ -8,11 +8,14 @@ namespace CarFinanceManager.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public UnitOfWork()
+        private readonly ApplicationDbContext _context;
+
+        public UnitOfWork(ApplicationDbContext context)
         {
-            Users = new ApplicationDbContext().Users.ToList();
-            Expenses = new ExpensesRepository(new ApplicationDbContext());
-            Vehicles = new VehiclesRepository(new ApplicationDbContext());
+            _context = context;
+            Users = _context.Users.ToList();
+            Expenses = new ExpensesRepository(_context);
+            Vehicles = new VehiclesRepository(_context);
         }
 
         public IEnumerable<ApplicationUser> Users { get; set; }

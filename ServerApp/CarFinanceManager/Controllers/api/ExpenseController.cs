@@ -52,9 +52,12 @@ namespace CarFinanceManager.Controllers.api
             if (category == null)
                 return BadRequest("Category doesn't exist");
 
+            var vehicle = _unitOfWork.Vehicles.GetSingleById(expense.VehicleId);
+
             var domainExpense = Mapper.Map<ExpenseDto, ExpenseDetails>(expense);
             domainExpense.Category = category;
             domainExpense.User = user;
+            domainExpense.Vehicle = vehicle;
 
             if (!ModelState.IsValid)
                 return BadRequest("Model is invalid");

@@ -12,7 +12,8 @@ export default class AddExpense extends React.PureComponent {
         this.props.expensesService.add({
             cost: this.cost.value,
             category: this.category.value,
-            dateCreated: moment().format(apiDateFormat)
+            dateCreated: moment().format(apiDateFormat),
+            vehicleId: this.vehicle.value
         })
         .then(res => this.addExpense(res.data));
 
@@ -24,6 +25,7 @@ export default class AddExpense extends React.PureComponent {
     resetForm = () => {
         this.cost.value = null;
         this.category.value = null;
+        this.vehicle.value = null;
     }
 
     addExpense = expense => {
@@ -67,6 +69,14 @@ export default class AddExpense extends React.PureComponent {
                                     <select name="category" className="form-control" ref={input => this.category = input}>
                                         {categories.map(cat => (
                                             <option key={cat.expenseCategoryId} value={cat.name}>{cat.name}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="vehicle">Select Vehicle:</label>
+                                    <select name="vehicle" className="form-control" ref={input => this.vehicle = input}>
+                                        {this.props.vehicles.map(v => (
+                                            <option key={v.id} value={v.id}>{v.make} {v.model}</option>
                                         ))}
                                     </select>
                                 </div>
